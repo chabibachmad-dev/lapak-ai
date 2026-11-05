@@ -1,0 +1,13 @@
+{
+  "name": "lapak-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page UMKM dengan asisten AI (bawa API key sendiri)",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

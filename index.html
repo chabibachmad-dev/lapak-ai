@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memuat…</title>
+  <meta name="description" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#produk">Lewati ke produk</a>
+
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="#" data-bind="business.name"></a>
+      <nav class="nav" aria-label="Menu utama">
+        <a href="#produk">Produk</a>
+        <a href="#cara-pesan">Cara pesan</a>
+        <a href="#faq">Tanya jawab</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+      <a class="btn btn-wa small" data-wa target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-in">
+        <div class="hero-copy">
+          <p class="hero-kicker" data-bind="business.tagline"></p>
+          <h1 data-bind="hero.headline"></h1>
+          <p class="hero-sub" data-bind="hero.sub"></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#produk" data-bind="hero.ctaText"></a>
+            <button class="btn btn-ghost" type="button" data-open-chat>Tanya asisten</button>
+          </div>
+        </div>
+        <div class="hero-weave" aria-hidden="true">
+          <div class="weave"></div>
+          <div class="hero-chat">
+            <div class="bubble me">Keranjang laundry masih ada?</div>
+            <div class="bubble bot" data-hero-answer></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap highlights" data-list="highlights"></div>
+    </section>
+
+    <section id="produk" class="section">
+      <div class="wrap">
+        <h2>Produk</h2>
+        <ul class="catalog" data-list="products"></ul>
+      </div>
+    </section>
+
+    <section id="cara-pesan" class="section section-soft">
+      <div class="wrap">
+        <h2>Cara pesan</h2>
+        <ol class="steps" data-list="steps"></ol>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="wrap narrow">
+        <h2>Tanya jawab</h2>
+        <div class="faq" data-list="faq"></div>
+      </div>
+    </section>
+
+    <section id="kontak" class="section contact">
+      <div class="wrap contact-in">
+        <div>
+          <h2>Kunjungi atau hubungi kami</h2>
+          <p class="about" data-bind="business.description"></p>
+          <a class="btn btn-wa" data-wa target="_blank" rel="noopener">Chat di WhatsApp</a>
+        </div>
+        <dl class="facts">
+          <div><dt>Alamat</dt><dd><span data-bind="business.address"></span><br><a data-maps target="_blank" rel="noopener">Buka peta</a></dd></div>
+          <div><dt>Jam buka</dt><dd data-list="hours"></dd></div>
+          <div><dt>Email</dt><dd><a data-email></a></dd></div>
+          <div><dt>Instagram</dt><dd><a data-ig target="_blank" rel="noopener"></a></dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">© <span data-year></span> <span data-bind="business.name"></span></div>
+  </footer>
+
+  <!-- Chat widget -->
+  <button class="chat-fab" type="button" data-open-chat aria-controls="chat" aria-expanded="false">
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm3 6.5a1.5 1.5 0 1 0 0 .01Zm5 0a1.5 1.5 0 1 0 0 .01Zm5 0a1.5 1.5 0 1 0 0 .01Z"/></svg>
+    <span class="sr">Buka chat asisten</span>
+  </button>
+
+  <section id="chat" class="chat" role="dialog" aria-modal="false" aria-labelledby="chat-title" hidden>
+    <header class="chat-head">
+      <div>
+        <h2 id="chat-title" data-bind="assistant.name"></h2>
+        <p class="chat-status" data-chat-status>Online</p>
+      </div>
+      <button class="chat-close" type="button" data-close-chat aria-label="Tutup chat">×</button>
+    </header>
+    <div class="chat-log" data-chat-log aria-live="polite"></div>
+    <div class="chat-suggest" data-chat-suggest></div>
+    <form class="chat-form" data-chat-form>
+      <label class="sr" for="chat-input">Tulis pertanyaan</label>
+      <input id="chat-input" name="q" autocomplete="off" maxlength="600" placeholder="Tulis pertanyaan…" required>
+      <button class="btn btn-primary" type="submit">Kirim</button>
+    </form>
+    <p class="chat-note">Jawaban dibuat oleh AI dan bisa keliru. Untuk pesanan, hubungi WhatsApp.</p>
+  </section>
+
+  <script type="module" src="assets/site.js"></script>
+</body>
+</html>

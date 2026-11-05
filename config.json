@@ -1,0 +1,59 @@
+{
+  "business": {
+    "name": "Rotan Lestari",
+    "tagline": "Kerajinan anyaman rotan buatan tangan",
+    "description": "Rotan Lestari adalah usaha kerajinan anyaman rotan rumahan. Semua produk dianyam tangan oleh perajin lokal dari rotan pilihan, dilapisi pernis berbahan dasar air sehingga aman dan tahan lama.",
+    "city": "Cirebon, Jawa Barat",
+    "address": "Jl. Contoh Anyaman No. 12, Cirebon",
+    "mapsUrl": "https://maps.google.com/?q=Cirebon",
+    "whatsapp": "6281234567890",
+    "email": "halo@contoh-toko.com",
+    "instagram": "contoh.toko",
+    "hours": [
+      { "day": "Senin–Jumat", "time": "08.00–17.00" },
+      { "day": "Sabtu", "time": "08.00–14.00" },
+      { "day": "Minggu", "time": "Tutup" }
+    ],
+    "shipping": "Kami kirim ke seluruh Indonesia lewat JNE, J&T, dan SiCepat. Ongkir dihitung saat checkout di WhatsApp sesuai berat dan kota tujuan."
+  },
+  "theme": {
+    "primary": "#2F5D46",
+    "accent": "#E0A93B"
+  },
+  "hero": {
+    "headline": "Anyaman rotan yang dibuat pelan-pelan, untuk dipakai bertahun-tahun.",
+    "sub": "Keranjang, tas, dan perabot kecil dari rotan asli. Tanya stok, ukuran, atau ongkir ke asisten kami. Jawabnya langsung, 24 jam.",
+    "ctaText": "Lihat produk"
+  },
+  "products": [
+    { "name": "Keranjang Laundry Besar", "price": "Rp185.000", "desc": "Diameter 40 cm, tinggi 50 cm. Dilengkapi tutup dan pegangan samping.", "tag": "Terlaris" },
+    { "name": "Tas Rotan Bulat", "price": "Rp165.000", "desc": "Diameter 20 cm, tali kulit sintetis, lapisan kain di dalam.", "tag": "" },
+    { "name": "Tatakan Piring (set 4)", "price": "Rp95.000", "desc": "Diameter 30 cm, anyaman rapat, mudah dilap.", "tag": "" },
+    { "name": "Kap Lampu Gantung", "price": "Rp210.000", "desc": "Diameter 35 cm, cocok untuk ruang makan atau teras.", "tag": "Baru" },
+    { "name": "Keranjang Serbaguna (set 3)", "price": "Rp140.000", "desc": "Ukuran S, M, L untuk mainan, buah, atau perlengkapan mandi.", "tag": "" }
+  ],
+  "highlights": [
+    { "title": "Dianyam tangan", "text": "Setiap produk dibuat satu per satu oleh perajin, bukan mesin." },
+    { "title": "Rotan pilihan", "text": "Rotan dikeringkan dan diseleksi supaya tidak mudah patah atau berjamur." },
+    { "title": "Bisa pesan khusus", "text": "Ukuran dan warna bisa disesuaikan untuk pesanan minimal 5 buah." }
+  ],
+  "steps": [
+    { "title": "Tanya dulu", "text": "Cek stok, ukuran, atau warna lewat asisten di pojok kanan bawah." },
+    { "title": "Pesan via WhatsApp", "text": "Kirim nama produk dan alamat. Kami hitungkan ongkirnya." },
+    { "title": "Bayar dan tunggu", "text": "Transfer bank atau e-wallet. Barang dikirim 1–2 hari kerja." }
+  ],
+  "faq": [
+    { "q": "Apakah bisa pesan ukuran khusus?", "a": "Bisa, untuk pesanan minimal 5 buah. Waktu pengerjaan 7–14 hari kerja tergantung jumlah." },
+    { "q": "Berapa lama pengiriman?", "a": "Barang ready dikirim 1–2 hari kerja setelah pembayaran. Lama perjalanan tergantung kurir dan kota tujuan, biasanya 2–5 hari." },
+    { "q": "Pembayaran bisa lewat apa?", "a": "Transfer bank (BCA, BRI, Mandiri), QRIS, dan e-wallet." },
+    { "q": "Bagaimana cara merawat produk rotan?", "a": "Simpan di tempat kering, jauhkan dari sinar matahari langsung terlalu lama, dan bersihkan debu dengan kuas lembut atau kain kering." },
+    { "q": "Apakah bisa retur?", "a": "Bisa jika barang rusak saat diterima. Kirim video unboxing dalam 2x24 jam setelah barang sampai." }
+  ],
+  "assistant": {
+    "name": "Asisten Rotan Lestari",
+    "greeting": "Halo! Saya asisten Rotan Lestari. Mau tanya soal produk, harga, atau pengiriman?",
+    "tone": "ramah, singkat, dan sopan",
+    "extraInstructions": "Jika pelanggan ingin memesan, arahkan untuk menghubungi WhatsApp toko.",
+    "suggestions": ["Ada produk apa saja?", "Berapa lama pengiriman?", "Jam buka kapan?"]
+  }
+}

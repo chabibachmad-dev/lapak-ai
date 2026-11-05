@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Settings — LapakAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/admin.css">
+</head>
+<body class="admin">
+  <header class="a-top">
+    <div class="a-wrap a-top-in">
+      <div>
+        <h1>Settings</h1>
+        <p class="a-hint">Ubah isi situs dan asisten AI. Perubahan baru tampil di situs setelah file <b>config.json</b> diganti.</p>
+      </div>
+      <div class="a-actions">
+        <button class="btn btn-ghost small" type="button" data-reset>Buang perubahan</button>
+        <label class="btn btn-ghost small a-file">Muat config.json<input type="file" accept="application/json,.json" data-import hidden></label>
+        <button class="btn btn-ghost small" type="button" data-preview>Pratinjau</button>
+        <button class="btn btn-primary small" type="button" data-download>Unduh config.json</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="a-wrap a-layout">
+    <nav class="a-side" aria-label="Bagian settings">
+      <a href="#s-usaha">Info usaha</a>
+      <a href="#s-tampilan">Tampilan</a>
+      <a href="#s-produk">Produk</a>
+      <a href="#s-keunggulan">Keunggulan</a>
+      <a href="#s-cara">Cara pesan</a>
+      <a href="#s-faq">Tanya jawab</a>
+      <a href="#s-asisten">Asisten</a>
+      <a href="#s-ai">Provider AI</a>
+    </nav>
+
+    <form class="a-main" data-form onsubmit="return false">
+      <section id="s-usaha" class="a-card">
+        <h2>Info usaha</h2>
+        <div class="grid2">
+          <label>Nama usaha<input data-f="business.name"></label>
+          <label>Tagline<input data-f="business.tagline"></label>
+        </div>
+        <label>Deskripsi singkat<textarea rows="3" data-f="business.description"></textarea></label>
+        <div class="grid2">
+          <label>Alamat<input data-f="business.address"></label>
+          <label>Kota<input data-f="business.city"></label>
+          <label>Link Google Maps<input data-f="business.mapsUrl" type="url"></label>
+          <label>Nomor WhatsApp <small>format 62…, tanpa + dan spasi</small><input data-f="business.whatsapp" inputmode="numeric"></label>
+          <label>Email<input data-f="business.email" type="email"></label>
+          <label>Instagram <small>tanpa @</small><input data-f="business.instagram"></label>
+        </div>
+        <label>Info pengiriman<textarea rows="2" data-f="business.shipping"></textarea></label>
+        <h3>Jam buka</h3>
+        <div data-rows="business.hours"></div>
+      </section>
+
+      <section id="s-tampilan" class="a-card">
+        <h2>Tampilan</h2>
+        <div class="grid2">
+          <label>Warna utama<span class="color"><input type="color" data-f="theme.primary"><output data-out="theme.primary"></output></span></label>
+          <label>Warna aksen<span class="color"><input type="color" data-f="theme.accent"><output data-out="theme.accent"></output></span></label>
+        </div>
+        <label>Judul besar<textarea rows="2" data-f="hero.headline"></textarea></label>
+        <label>Kalimat pendukung<textarea rows="2" data-f="hero.sub"></textarea></label>
+        <label>Teks tombol<input data-f="hero.ctaText"></label>
+      </section>
+
+      <section id="s-produk" class="a-card">
+        <h2>Produk</h2>
+        <div data-rows="products"></div>
+      </section>
+
+      <section id="s-keunggulan" class="a-card">
+        <h2>Keunggulan</h2>
+        <div data-rows="highlights"></div>
+      </section>
+
+      <section id="s-cara" class="a-card">
+        <h2>Cara pesan</h2>
+        <div data-rows="steps"></div>
+      </section>
+
+      <section id="s-faq" class="a-card">
+        <h2>Tanya jawab</h2>
+        <p class="a-hint">Asisten AI juga membaca bagian ini. Makin lengkap jawabannya, makin tepat asistennya.</p>
+        <div data-rows="faq"></div>
+      </section>
+
+      <section id="s-asisten" class="a-card">
+        <h2>Asisten</h2>
+        <div class="grid2">
+          <label>Nama asisten<input data-f="assistant.name"></label>
+          <label>Gaya bicara<input data-f="assistant.tone" placeholder="ramah, singkat, sopan"></label>
+        </div>
+        <label>Salam pembuka<textarea rows="2" data-f="assistant.greeting"></textarea></label>
+        <label>Instruksi tambahan <small>opsional</small><textarea rows="2" data-f="assistant.extraInstructions" placeholder="Contoh: Tawarkan diskon 10% untuk pembelian di atas Rp500.000."></textarea></label>
+        <label>Saran pertanyaan <small>pisahkan dengan baris baru</small><textarea rows="3" data-f="assistant.suggestions" data-lines></textarea></label>
+      </section>
+
+      <section id="s-ai" class="a-card">
+        <h2>Provider AI</h2>
+        <p class="a-hint">API key <b>tidak</b> disimpan di config.json. Untuk situs online, isi key di menu <b>Environment variables</b> hosting Anda (Netlify atau Vercel). Tanpa key, asisten tetap jalan dalam mode demo yang menjawab dari Tanya jawab.</p>
+        <div class="grid2">
+          <label>Provider<select data-ai="provider"></select></label>
+          <label>Model <small data-model-hint></small><input data-ai="model" placeholder="kosongkan untuk model bawaan"></label>
+        </div>
+        <label data-baseurl-wrap>Base URL <small>untuk provider lain yang kompatibel OpenAI</small><input data-ai="baseUrl" placeholder="https://…/v1"></label>
+
+        <h3>Salin ke Environment variables hosting</h3>
+        <pre class="envbox" data-env></pre>
+        <button class="btn btn-ghost small" type="button" data-copy-env>Salin</button>
+
+        <h3>Tes di browser ini</h3>
+        <p class="a-hint">Key hanya disimpan di browser Anda sendiri untuk mencoba. Pengunjung situs tidak bisa melihatnya. Beberapa provider tidak mengizinkan akses langsung dari browser; jika tes gagal di sini, key tetap bisa dipakai dari hosting.</p>
+        <label>API key<input type="password" data-ai="apiKey" autocomplete="off" placeholder="tempel API key untuk tes"></label>
+        <div class="a-row">
+          <button class="btn btn-primary small" type="button" data-test>Tes koneksi</button>
+          <button class="btn btn-ghost small" type="button" data-save-key>Pakai di chat browser ini</button>
+          <button class="btn btn-ghost small" type="button" data-clear-key>Hapus key dari browser</button>
+        </div>
+        <p class="a-result" data-test-result role="status"></p>
+      </section>
+    </form>
+  </div>
+
+  <div class="toast" data-toast role="status" hidden></div>
+  <script type="module" src="assets/admin.js"></script>
+</body>
+</html>
